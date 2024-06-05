@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: mongodb-backup
-  namespace: ds-project
+  namespace: {{ .Values.namespace }}
 spec:
   schedule: {{ .Values.backupContainer.schedule }}  # This schedules the job to run daily at 2am
   jobTemplate:

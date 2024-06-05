@@ -4,18 +4,18 @@ host: app1.casadesalva.dns-dynamic.net
 
 frontendImage:
   repository: sunnyeyles/ds_client
-  tag: latest
-#  pullPolicy: 
+  tag: "1.0"
+  pullPolicy: Always
 
 backendImage:
   repository: sunnyeyles/ds_server
-  tag: latest
-#  pullPolicy: 
+  tag: "1.0"
+  pullPolicy: Always
 
 mongodbImage:
-  repository: bitnami/mongodb
-  tag: latest
-#  pullPolicy: 
+  repository: sunnyeyles/ds_database
+  tag: "1.0"
+#  pullPolicy: Always
 
 frontendService:
   name: frontend
@@ -26,9 +26,9 @@ frontendService:
 
 backendService:
   name: backend
-  port: 5000
-  targetPort: 5000
-  containerPort: 5000
+  port: 3001
+  targetPort: 3001
+  containerPort: 3001
 
 mongodbService:
   name: mongodb
